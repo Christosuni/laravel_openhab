@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SensorDataController;
+use App\Http\Controllers\OpenHABController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,6 @@ use App\Http\Controllers\SensorDataController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/fetch-sensor-data', [OpenHABController::class, 'fetchSensorData']);
